@@ -26,7 +26,6 @@ export const ChatToolbar = () => {
           />
         </div>
       </div>
-      
       <SearchUsers closeFn={() => setSearching(false)} visible={searching} />
     </>
   );
