@@ -63,7 +63,6 @@ export const ChatList = () => {
               </>
             )}
           </div>
-
           <div onClick={() => deleteChatClick(c)} className="chat-item-delete">
             <Icon name="delete" />
           </div>

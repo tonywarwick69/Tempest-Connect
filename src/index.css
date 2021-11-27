@@ -293,6 +293,7 @@ code {
 }
 .message-author {
   font-size: 24px;
+  color: black;
 }
 .message-content {
   padding-left: 25px;
@@ -300,6 +301,7 @@ code {
 .message-text {
   font-size: 14px;
   margin-bottom: 10px;
+  color: black;
 }
 .chat-controls {
   width: 100%;
