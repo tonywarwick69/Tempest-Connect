@@ -506,7 +506,7 @@ code {
   outline: none;
   color: #f2f2f2;
   caret-color: white;
-  background-color: #1f2026;
+  background-color: cyan;
   border-radius: 0px !important;
 }
 .user-search .input i {

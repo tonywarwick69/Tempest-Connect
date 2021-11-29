@@ -13,8 +13,7 @@ export const ChatProvider = ({ children, authUser }) => {
     newChat(chatConfig, { title: '' });
   };
   const deleteChatClick = chat => {
-    const isAdmin = chat.admin === chatConfig.userName;
-
+    const isAdmin = chat.admin.username === chatConfig.userName;
     if (
       isAdmin &&
       window.confirm('Bạn có muốn xóa phòng chat này?')
@@ -25,6 +24,10 @@ export const ChatProvider = ({ children, authUser }) => {
     }
   };
   const selectChatClick = chat => {
+    const isAdmin = chat.admin.username === chatConfig.userName;
+    console.log("chat.admin.username:",chat.admin.username );
+    console.log("chatConfig.userName:",chatConfig.userName);
+    console.log("isAdmin:",isAdmin);
     getMessages(chatConfig, chat.id, messages => {
       setSelectedChat({
         ...chat,
