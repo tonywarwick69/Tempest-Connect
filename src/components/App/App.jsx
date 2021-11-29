@@ -9,7 +9,6 @@ export const App = () => {
   const history = useHistory();
   const { authUser } = useAuth();
   const authResolved = useResolved(authUser);
-
   // If the user is logged in it will prevent the
   // user from seeing the login/signup screens
   // by always redirecting to chat on auth change.
@@ -33,3 +32,4 @@ export const App = () => {
     <>Loading...</>
   );
 };
+

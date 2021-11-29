@@ -71,7 +71,7 @@ export const SearchUsers = ({ visible, closeFn }) => {
         onBlur={closeFn}
         loading={loading}
         value={searchTerm}
-        placeholder="Search For Users"
+        placeholder="Tìm tên user"
         open={!!searchResults && !loading}
         input={{ ref: r => (searchRef = r) }}
         onSearchChange={e => setSearchTerm(e.target.value)}

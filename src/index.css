@@ -17,23 +17,115 @@ code {
   height: 100vh;
   display: flex;
   overflow: hidden;
+  background-color: #121212;
+}
+.loginLogo {
+  font-size: 50px;
+  font-weight: 800;
+  color: #1775ee;
+  margin-bottom: 10px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #121212;
+}
+.signupLogo {
+  font-size: 50px;
+  font-weight: 800;
+  color: #1775ee;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loginRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 70vh;
+  overflow: hidden;
+}
+.signupRight {
+  margin-top: 150px;
+  display: flex;
+  width: 500px;
+  height: 70vh;
+  justify-content: center;
+  float: left; /* add this */
+}
+.login {
+  display: flex;
+  background-color: whitesmoke;
+}
+.signup {
+  display: flex;
+  background-color: whitesmoke;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
+  width: 100%;
+}
+.signupWrapper {
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: whitesmoke;
+
+  overflow: hidden;
+}
+.loginDesc {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  text-align: center;
+}
+.signupDesc {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  text-align: center;
 }
 .auth-form {
   width: 500px;
   padding: 25px;
   max-width: 100%;
   border-radius: 10px;
-  background-color: #15202b;
+  background-color: rgb(9, 163, 224);
   box-shadow: 0px 0px 10px black;
+  color: black;
 }
+.auth-form-signup {
+  width: 500px;
+  padding: 25px;
+  max-width: 100%;
+  border-radius: 10px;
+  background-color: rgb(9, 163, 224);
+  box-shadow: 0px 0px 10px rgb(236, 233, 233);
+  color: black;
+  overflow-x: auto;
+}
+
+.auth-form-signup label {
+  display: block;
+  margin-bottom: 25px;
+}
+
 .auth-form label {
   display: block;
   margin-bottom: 25px;
 }
 .auth-form input {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: #d2d2d2;
+}
+.auth-form-signup input {
   width: 100%;
   padding: 5px;
   border-radius: 5px;
@@ -47,9 +139,21 @@ code {
   border: none;
   color: white;
   cursor: pointer;
-  background-color: #030a24;
+  background-color: #44ce0e;
+}
+.auth-form-signup button {
+  padding: 10px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  background-color: #44ce0e;
 }
 .auth-form button:hover {
+  box-shadow: 0px 0px 3px black;
+}
+.auth-form-signup button:hover {
   box-shadow: 0px 0px 3px black;
 }
 .auth-form button:disabled {
@@ -61,15 +165,41 @@ code {
   margin-top: 25px;
   margin-bottom: 25px;
 }
+.auth-link-container-signup {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
 .auth-link {
-  color: gray;
+  color: rgb(14, 54, 233);
   cursor: pointer;
   font-weight: bold;
 }
+.auth-link-signup {
+  color: rgb(14, 54, 233);
+  cursor: pointer;
+  font-weight: bold;
+}
+
 .auth-link:hover {
   color: #5c5caa;
 }
+.loginLeft {
+  text-align: left;
+}
+.signupLeft {
+  text-align: center;
+  margin-top: 200px;
+  max-width: 100%;
+  display: block;
+  float: left; /* add this */
+  padding: 25px;
+}
+
 .error {
+  color: #cd0000;
+  font-weight: bold;
+}
+.error-signup {
   color: #cd0000;
   font-weight: bold;
 }
@@ -79,12 +209,22 @@ code {
   display: flex;
 }
 .left-rail {
-  height: 100%;
+  max-height: 100%;
   width: 300px;
 }
+.left-rail-title {
+  font-size: 30px;
+  font-weight: 800;
+  color: #026cf7;
+  text-align: center;
+  background-color: rgb(12, 11, 11);
+  height: 50px;
+  padding-top: 10px;
+}
+
 .chat-list-container {
   overflow-y: auto;
-  height: calc(100% - 150px);
+  height: calc(100% - 200px);
 }
 .no-chats-yet {
   padding: 15px;
@@ -98,7 +238,6 @@ code {
   height: 75px;
   width: 100%;
   padding: 10px;
-
   align-items: center;
   box-shadow: 0px 0px 2px black;
   justify-content: space-between;
@@ -113,7 +252,7 @@ code {
 }
 .chat-list-item .selected,
 .chat-list-item:hover {
-  background-color: #18181d;
+  background-color: #0c50e2;
 }
 .chat-list-avatar {
   width: 28px;
@@ -172,13 +311,14 @@ code {
 }
 .left-rail-header {
   height: 100px;
-  display: flex;
+  display: block;
   padding: 10px;
   position: relative;
   align-items: center;
   background-color: #161616;
   box-shadow: 0px 0px 2px black;
 }
+
 .current-user-info {
   display: flex;
   align-items: center;
@@ -240,11 +380,11 @@ code {
   padding-left: 25px;
   padding-right: 25px;
   align-items: center;
-  background-color: #121212;
+  background-color: #1775ee;
   justify-content: space-between;
 }
 .chat-header-text {
-  color: gray;
+  color: black;
   font-size: 16px;
   font-weight: bold;
 }
@@ -254,15 +394,18 @@ code {
   cursor: pointer;
   align-items: center;
   padding-bottom: 5px;
+  margin-right: 50px;
 }
 .no-messages-yet {
   font-size: 24px;
   margin-top: 25px;
+  color: black;
 }
 .chat-messages {
   flex: 1;
   padding: 25px;
   overflow-y: auto;
+  overflow-x: auto;
   padding-top: 0px;
   padding-bottom: 0px;
   height: calc(100% - 105px);
@@ -273,7 +416,9 @@ code {
   flex-direction: column;
 }
 .message-image {
-  width: 250px;
+  width: 550px;
+  max-width: 100%;
+  height: auto;
 }
 .message-avatar {
   width: 35px;
@@ -314,7 +459,7 @@ code {
   border-radius: 5px;
   align-items: center;
   width: calc(100% - 50px);
-  background-color: #23252c;
+  background-color: #2f313a;
   box-shadow: 0px 0px 3px black;
 }
 .attachment-icon {
@@ -326,10 +471,10 @@ code {
   padding-bottom: 5px;
   align-items: center;
   justify-content: center;
-  background-color: #1f2026;
+  background-color: #2f313a;
 }
 .attachment-icon:hover {
-  background-color: #2f313a;
+  background-color: #44ce0e;
 }
 .chat-input {
   flex: 1;
@@ -350,7 +495,7 @@ code {
   justify-content: center;
 }
 .send-message-icon:hover {
-  background-color: #1f2026;
+  background-color: #44ce0e;
 }
 .user-search .input {
   width: 100%;
@@ -390,11 +535,12 @@ code {
   margin-right: 10px;
   border-radius: 5px;
 }
+
 .image-upload-actions .cancel {
-  background-color: #cd0000;
+  background-color: #030a24;
 }
 .image-upload-actions .submit {
-  background-color: #030a24;
+  background-color: #cd0000;
 }
 .file-input {
   display: none;
@@ -413,4 +559,7 @@ code {
   top: 5px;
   right: 5px;
   cursor: pointer;
+}
+.log-out-icon {
+  font-size: 30px;
 }

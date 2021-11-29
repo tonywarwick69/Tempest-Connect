@@ -8,8 +8,8 @@ export const defaultValues = {
 };
 
 export const validationSchema = Yup.object().shape({
-  email: Yup.string().email('Invalid email address').required('Required'),
-  password: Yup.string().required('Required').min(8, 'Must be at least 8 characters'),
-  verifyPassword: Yup.string().required('Required').oneOf([Yup.ref('password'), null], 'Passwords must match'),
-  userName: Yup.string().required('Required').matches(/^\S*$/, 'No spaces').min(3, 'Must be at least 3 characters'),
+  email: Yup.string().email('Email không hợp lệ').required('Required'),
+  password: Yup.string().required('Required').min(6, 'Mật khẩu phải có ít nhất 6 ký tự'),
+  verifyPassword: Yup.string().required('Required').oneOf([Yup.ref('password'), null], 'Mật khẩu tái xác nhận phải giống nhau'),
+  userName: Yup.string().required('Required').matches(/^\S*$/, 'No spaces').min(3, 'Tên người dùng phải có ít nhất 3 ký tự'),
 });

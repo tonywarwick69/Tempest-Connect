@@ -17,10 +17,10 @@ export const ChatProvider = ({ children, authUser }) => {
 
     if (
       isAdmin &&
-      window.confirm('Are you sure you want to delete this chat?')
+      window.confirm('Bạn có muốn xóa phòng chat này?')
     ) {
       deleteChat(chatConfig, chat.id);
-    } else if (window.confirm('Are you sure you want to leave this chat?')) {
+    } else if (window.confirm('Bạn có muốn rời khỏi phòng chat này?')) {
       leaveChat(chatConfig, chat.id, chatConfig.userName);
     }
   };

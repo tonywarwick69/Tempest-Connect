@@ -4,8 +4,8 @@
 // it just returns it.
 
 export const joinUsernames = (people, currentUsername) => {
-  return '@' + people
+  return   people
     .map(p => p.person.username)
     .filter(un => un !== currentUsername)
-    .join(', @');
+    .join(',');
 };

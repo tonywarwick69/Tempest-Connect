@@ -10,6 +10,9 @@ export const LeftRail = () => {
 
   return (
     <div className="left-rail">
+      <div className="left-rail-title">
+        Tempest Connect
+      </div>
       <RailHeader />
       {chatsResolved ? (
         <>
@@ -19,11 +22,11 @@ export const LeftRail = () => {
             </div>
           ) : (
             <div className="chat-list-container no-chats-yet">
-              <h3>No Chats Yet</h3>
+              <h3>Chưa có tin nhắn</h3>
             </div>
           )}
           <button className="create-chat-button" onClick={createChatClick}>
-            Create Chat
+            Tạo Chat
           </button>
         </>
       ) : (

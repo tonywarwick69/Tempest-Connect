@@ -26,7 +26,6 @@ export const ChatInput = () => {
     setImage(file);
     setImageModalOpen(true);
   };
-
   return (
     <>
       <div className="chat-controls">
@@ -40,12 +39,12 @@ export const ChatInput = () => {
           }}
           className="attachment-icon"
         >
-          <Icon name="attach" color="grey" />
+          <Icon name="file image outline" color="blue" />
         </div>
         <input
           value={chatInputText}
           className="chat-input"
-          placeholder="Send a message"
+          placeholder="Gửi tin nhắn"
           onKeyPress={e => {
             if (e.key === 'Enter') {
               sendChatMessage();
@@ -54,7 +53,7 @@ export const ChatInput = () => {
           onChange={e => setChatInputText(e.target.value)}
         />
         <div onClick={sendChatMessage} className="send-message-icon">
-          <Icon name="send" color="grey" />
+          <Icon name="send" color="blue" />
         </div>
       </div>
 

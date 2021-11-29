@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useChat } from 'context';
 import { getChats, ChatEngine } from 'react-chat-engine';
 import { LeftRail, ChatToolbar, ChatInput, MessageList } from 'components';
-import { Icon } from 'semantic-ui-react';
 
 export const Chat = () => {
   const {
@@ -91,7 +90,7 @@ export const Chat = () => {
                 className="point-left"
                 alt="point-left"
               />
-              Select A Chat
+              Chọn phòng chat
             </div>
           )}
         </div>

@@ -7,7 +7,7 @@ export const ImageUpload = ({
   close,
   onSubmit,
   crop = false,
-  header = 'Send This Image?',
+  header = 'Gửi hình này?',
 }) => {
   const [imageSrc, setImageSrc] = useState('');
   const cropRef = useRef();
@@ -40,9 +40,6 @@ export const ImageUpload = ({
 
       <Modal.Actions>
         <div className="image-upload-actions">
-          <button className="cancel" onClick={close}>
-            Cancel
-          </button>
           <button
             className="submit"
             onClick={() => {
@@ -59,6 +56,9 @@ export const ImageUpload = ({
             }}
           >
             Upload
+          </button>
+          <button className="cancel" onClick={close}>
+            Cancel
           </button>
         </div>
       </Modal.Actions>

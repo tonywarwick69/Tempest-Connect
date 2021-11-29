@@ -20,10 +20,10 @@ export const ChatToolbar = () => {
 
         <div className="add-user-icon">
           <Icon
-            color="grey"
+            color="white"
             name="user plus"
             onClick={() => setSearching(true)}
-          />
+          ></Icon>
         </div>
       </div>
       <SearchUsers closeFn={() => setSearching(false)} visible={searching} />

@@ -58,11 +58,11 @@ export const RailHeader = () => {
       )}
 
       <div className="left-rail-header">
-        <Icon
+        <div className="log-out-icon"> <Icon
           onClick={() => fb.auth.signOut()}
           className="sign-out"
           name="sign out"
-        />
+        /></div>
         {configResolved && !!chatConfig ? (
           <div className="current-user-info">
             <IconGroup
@@ -87,7 +87,7 @@ export const RailHeader = () => {
               <Icon corner name="camera" inverted circular />
             </IconGroup>
 
-            <div className="current-username">@{chatConfig.userName}</div>
+            <div className="current-username">{chatConfig.userName}</div>
           </div>
         ) : (
           <div className="user-loading">

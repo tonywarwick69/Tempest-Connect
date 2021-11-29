@@ -31,16 +31,16 @@ export const Signup = () => {
           });
         } else {
           setServerError(
-            "We're having trouble signing you up. Please try again.",
+            "Xin lỗi chúng tôi gặp lỗi khi thực hiện đăng ký tài khoản. Xin thử lại sau.",
           );
         }
       })
       .catch(err => {
         if (err.code === 'auth/email-already-in-use') {
-          setServerError('An account with this email already exists');
+          setServerError('Tài khoản với email hoặc mật khẩu này đã tồn tại ');
         } else {
           setServerError(
-            "We're having trouble signing you up. Please try again.",
+            "Xin lỗi chúng tôi gặp lỗi khi thực hiện đăng ký tài khoản. Xin thử lại sau.",
           );
         }
       })
@@ -48,40 +48,52 @@ export const Signup = () => {
   };
 
   return (
-    <div className="auth-form">
-      <h1>Signup</h1>
-      <Formik
-        onSubmit={signup}
-        validateOnMount={true}
-        initialValues={defaultValues}
-        validationSchema={validationSchema}
-      >
-        {({ isValid, isSubmitting }) => (
-          <Form>
-            <FormField name="userName" label="User Name" />
-            <FormField name="email" label="Email" type="email" />
-            <FormField name="password" label="Password" type="password" />
-            <FormField
-              type="password"
-              name="verifyPassword"
-              label="Verify Password"
-            />
-
-            <div className="auth-link-container">
-              Already have an account?{' '}
-              <span className="auth-link" onClick={() => history.push('login')}>
-                Log In!
+    <div className="signup">
+      <div className="signupWrapper">
+        <div className="signupLeft">
+            <h3 className="signupLogo">Tempest Connect</h3>
+            <span className="signupDesc">
+                Kết nối với bạn bè và trò chuyện với bạn bè xung quanh trên Tempest Connect
               </span>
-            </div>
+          </div>
+          <div className="signupRight">
+          <div className="auth-form-signup">
+        <h1>Đăng ký</h1>
+        <Formik
+          onSubmit={signup}
+          validateOnMount={true}
+          initialValues={defaultValues}
+          validationSchema={validationSchema}
+        >
+          {({ isValid, isSubmitting }) => (
+            <Form>
+              <FormField name="userName" label="User Name" />
+              <FormField name="email" label="Email" type="email" />
+              <FormField name="password" label="Password" type="password" />
+              <FormField
+                type="password"
+                name="verifyPassword"
+                label="Verify Password"
+              />
 
-            <button disabled={isSubmitting || !isValid} type="submit">
-              Sign Up
-            </button>
-          </Form>
-        )}
-      </Formik>
+              <div className="auth-link-container-signup">
+                Đã có tài khoản?{' '}
+                <span className="auth-link-signup" onClick={() => history.push('login')}>
+                  Đăng nhập!
+                </span>
+              </div>
 
-      {!!serverError && <div className="error">{serverError}</div>}
+              <button disabled={isSubmitting || !isValid} type="submit">
+                Đăng Ký
+              </button>
+            </Form>
+          )}
+        </Formik>
+
+        {!!serverError && <div className="error-signup">{serverError}</div>}
+      </div>
+          </div>
+      </div>
     </div>
   );
 };

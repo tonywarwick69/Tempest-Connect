@@ -41,7 +41,7 @@ export const ChatList = () => {
                   <div className="preview-username">{notMe(chatConfig, c)}</div>
                   <div className="preview-message">
                     {c.last_message.attachments.length
-                      ? `${c.last_message.sender.username} sent an attachment`
+                      ? `${c.last_message.sender.username} đã gửi file`
                       : c.last_message.text.slice(0, 50) + '...'}
                   </div>
                 </div>
@@ -56,7 +56,7 @@ export const ChatList = () => {
                   </div>
                   <div className="preview-message">
                     {c.last_message.attachments.length
-                      ? `${c.last_message.sender.username} sent an attachment`
+                      ? `${c.last_message.sender.username} đã gửi file`
                       : c.last_message.text.slice(0, 50) + '...'}
                   </div>
                 </div>
