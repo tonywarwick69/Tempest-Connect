@@ -61,7 +61,9 @@ export const Chat = () => {
               });
             }
             const chatThatMessageBelongsTo = myChats.find(c => c.id === chatId);
+            console.log("chatThatMessageBelongsTo:",chatThatMessageBelongsTo);
             const filteredChats = myChats.filter(c => c.id !== chatId);
+            console.log("filteredChats:",filteredChats);
             const updatedChat = {
               ...chatThatMessageBelongsTo,
               last_message: message,

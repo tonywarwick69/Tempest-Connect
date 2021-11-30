@@ -7,6 +7,7 @@ import { useScrollToBottom } from 'hooks';
 export const MessageList = () => {
   const { selectedChat } = useChat();
   useScrollToBottom(selectedChat, 'chat-messages');
+  console.log("selectedChat:",selectedChat);
 
   return (
     <div className="chat-messages">
@@ -21,7 +22,6 @@ export const MessageList = () => {
               />
               <div className="message-author">{m[0].sender.username}</div>
             </div>
-
             <div className="message-content">
               {m.map((individualMessage, index) => (
                 <div key={index}>
@@ -43,5 +43,6 @@ export const MessageList = () => {
         <div className="no-messages-yet">Chưa có tin nhắn</div>
       )}
     </div>
+  
   );
 };
