@@ -20,11 +20,13 @@ export const ChatInput = () => {
         files: [],
       });
     }
+    console.log("sendChatMessage:",sendChatMessage);
   };
 
   const onFileAttach = file => {
     setImage(file);
     setImageModalOpen(true);
+    console.log("onFileAttach:",onFileAttach)
   };
   return (
     <>

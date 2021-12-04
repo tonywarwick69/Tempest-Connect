@@ -27,7 +27,6 @@ export const ChatProvider = ({ children, authUser }) => {
     const isAdmin = chat.admin.username === chatConfig.userName;
     console.log("chat.admin.username:",chat.admin.username );
     console.log("chatConfig.userName:",chatConfig.userName);
-    console.log("isAdmin:",isAdmin);
     getMessages(chatConfig, chat.id, messages => {
       setSelectedChat({
         ...chat,

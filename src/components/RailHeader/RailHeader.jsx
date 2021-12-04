@@ -59,7 +59,9 @@ export const RailHeader = () => {
 
       <div className="left-rail-header">
         <div className="log-out-icon"> <Icon
-          onClick={() => fb.auth.signOut()}
+           onClick={() => {if(window.confirm('Bạn có muốn đăng xuất?')){
+            fb.auth.signOut();
+          } }}
           className="sign-out"
           name="sign out"
         /></div>

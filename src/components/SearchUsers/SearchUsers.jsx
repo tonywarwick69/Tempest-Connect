@@ -10,7 +10,7 @@ export const SearchUsers = ({ visible, closeFn }) => {
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
-
+  //useDebounce Chức năng yêu cầu function phải đơi khoảng thời gian nhất dịnh sau khi user ngưng thao tác rồi mới bắt đầu thực hiện
   // null -> not searching for results
   // [] -> No results
   // [...] -> Results
@@ -29,7 +29,7 @@ export const SearchUsers = ({ visible, closeFn }) => {
     selectedChat,
     setSelectedChat,
   } = useChat();
-
+  //Filter current user out of the search list
   const selectUser = username => {
     addPerson(chatConfig, selectedChat.id, username, () => {
       const filteredChats = myChats.filter(c => c.id !== selectedChat.id);
@@ -59,6 +59,9 @@ export const SearchUsers = ({ visible, closeFn }) => {
     } else {
       setSearchResults(null);
     }
+    console.log("debouncedSearchTerm:",debouncedSearchTerm);
+    console.log("chatConfig:",chatConfig);
+    console.log("selectedChat:",selectedChat);
   }, [debouncedSearchTerm, chatConfig, selectedChat]);
 
   return (

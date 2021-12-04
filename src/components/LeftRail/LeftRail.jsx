@@ -7,6 +7,7 @@ import { Loader } from 'semantic-ui-react';
 export const LeftRail = () => {
   const { myChats, createChatClick } = useChat();
   const chatsResolved = useResolved(myChats);
+  
 
   return (
     <div className="left-rail">
