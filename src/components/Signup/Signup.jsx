@@ -8,7 +8,8 @@ import { defaultValues, validationSchema } from './formikConfig';
 export const Signup = () => {
   const history = useHistory();
   const [serverError, setServerError] = useState('');
-
+  //Tạo form signup với 3 dữ liệu input { email, userName, password }
+  // Tạo user  trên chatengine sử dụng api, POST, tạo user trên Firebase sử dụng firestore
   const signup = ({ email, userName, password }, { setSubmitting }) => {
     fb.auth
       .createUserWithEmailAndPassword(email, password)

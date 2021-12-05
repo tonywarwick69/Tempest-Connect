@@ -7,6 +7,10 @@ import { SearchUsers } from 'components';
 export const ChatToolbar = () => {
   const { selectedChat, chatConfig } = useChat();
   const [searching, setSearching] = useState(false);
+  /*Tạo thanh search set trạng thái thành search to false khi chưa bấm vào add-user-icon
+    Khi bấm vào icon set trạng thái sang true và hiển thị thanh search
+    Hiện thị tên các thành viên trong phòng chat ở chat-header-text
+   */
 
   return (
     <>

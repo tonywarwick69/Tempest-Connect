@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+//Api tạo User
 const createUser = async (req, res) => {
   const { userId, userName } = req.body;
 

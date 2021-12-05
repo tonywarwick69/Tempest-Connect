@@ -9,9 +9,10 @@ export const App = () => {
   const history = useHistory();
   const { authUser } = useAuth();
   const authResolved = useResolved(authUser);
-  // If the user is logged in it will prevent the
-  // user from seeing the login/signup screens
-  // by always redirecting to chat on auth change.
+  /* Nếu user đã đăng nhập thì app sẽ chặn user có thể truy cập vào 
+    đăng nhập hoặc trang đăng ký 
+    bằng cách tự động điều hướng khi trạng thái xác thực người dùng(auth) thay đổi
+  */
   useEffect(() => {
     if (authResolved) {
       history.push(!!authUser ? '/' : '/login');

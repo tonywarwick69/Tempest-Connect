@@ -1,4 +1,4 @@
-import firebase from 'firebase/app'; // <-- This must be first
+import firebase from 'firebase/app'; // <-- Đây phải là import đầu tiên
 import 'firebase/auth';
 import 'firebase/storage';
 import 'firebase/firestore';
@@ -19,9 +19,9 @@ try {
   }
 }
 
-// Passing off firebase.auth() instead of firebase.auth
-// allows us to share the same instance of Firebase throughout
-// the entire app whenever we import it from here.
+// Sử dụng firebase.auth() thay vì firebase.auth
+//  điều này cho phép chia sẻ cùng 1 instance của Firebase
+//đi khắp nơi trong app mỗi khi import fb vào
 
 export const fb = {
   auth: firebase.auth(),

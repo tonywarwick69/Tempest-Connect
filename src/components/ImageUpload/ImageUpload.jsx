@@ -12,8 +12,7 @@ export const ImageUpload = ({
   const [imageSrc, setImageSrc] = useState('');
   const cropRef = useRef();
 
-  // Use the File Reader API to
-  // read the file and set the source
+  //Sử dụng File Reader API để đọc file và set source cho file hình ảnh up lên
   useEffect(() => {
     const fr = new FileReader();
     fr.onload = () => setImageSrc(fr.result);

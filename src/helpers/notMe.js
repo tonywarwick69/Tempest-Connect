@@ -1,5 +1,5 @@
-// Returns the first user inside of the selected chat
-// that is not the currently logged in user.
+//  Trả về tên user đầu tiên trong phòng chat
+//  mà username đó ko phải là user đang login
 
 export const notMe = (chatConfig, selectedChat) => {
   return selectedChat.people.find(p => p.person.username !== chatConfig.userName)?.person?.username;

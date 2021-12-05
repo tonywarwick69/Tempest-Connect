@@ -8,6 +8,13 @@ export const MessageList = () => {
   const { selectedChat } = useChat();
   useScrollToBottom(selectedChat, 'chat-messages');
   console.log("selectedChat:",selectedChat);
+  /*
+    MessageList để hiện thị array dãy các tin nhắn trong phòng chat
+    Các tin nhắn được gộp theo dạng groupMessage thành nhóm các tin nhắn
+    cùng 1 người gửi trong cùng 1 chuỗi tin nhắn
+    Thông tin tin nhắn cùng 1 chuỗi từ cùng 1 người gửi gồm:
+    Avatar sender, username, các tin nhắn
+  */
 
   return (
     <div className="chat-messages">

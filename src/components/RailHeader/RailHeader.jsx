@@ -14,6 +14,9 @@ export const RailHeader = () => {
   const onFileAttach = file => {
     setImage(file);
   };
+  /*
+    Hiển thị avatar , tên và icon thay đổi ảnh đại diện cho user đang login vào app
+  */
 
   return (
     <>

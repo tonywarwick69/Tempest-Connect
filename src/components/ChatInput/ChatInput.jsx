@@ -11,7 +11,15 @@ export const ChatInput = () => {
 
   const inputRef = useRef(null);
   const [image, setImage] = useState();
-
+  /*
+    Khi gửi tin nhắn sẽ tự động tạo nội dung tin nhắn mặc định là:
+    setChatInputText('') cho văn bản
+    setImage([]) cho file hình ảnh
+    Nếu đó là tin nhắn văn bản
+    setChatInputText(chatInputText)
+    Nếu đó là tin nhắn hình ảnh
+    setImage(files)
+  */
   const sendChatMessage = () => {
     if (selectedChat && chatInputText) {
       setChatInputText('');

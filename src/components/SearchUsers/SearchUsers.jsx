@@ -15,7 +15,7 @@ export const SearchUsers = ({ visible, closeFn }) => {
   // [] -> No results
   // [...] -> Results
   const [searchResults, setSearchResults] = useState(null);
-
+  //Nếu thanh search được kích hoạt thì request focus con trỏ vào thanh search
   useEffect(() => {
     if (visible && searchRef) {
       searchRef.focus();
@@ -29,7 +29,8 @@ export const SearchUsers = ({ visible, closeFn }) => {
     selectedChat,
     setSelectedChat,
   } = useChat();
-  //Filter current user out of the search list
+  //Lọc user đang đăng nhập khỏi danh sách search
+  //Khi user được selectUser username thì add User đó vào phòng chat hiện tại (selectedChat)
   const selectUser = username => {
     addPerson(chatConfig, selectedChat.id, username, () => {
       const filteredChats = myChats.filter(c => c.id !== selectedChat.id);
@@ -59,8 +60,6 @@ export const SearchUsers = ({ visible, closeFn }) => {
     } else {
       setSearchResults(null);
     }
-    console.log("debouncedSearchTerm:",debouncedSearchTerm);
-    console.log("chatConfig:",chatConfig);
     console.log("selectedChat:",selectedChat);
   }, [debouncedSearchTerm, chatConfig, selectedChat]);
 

@@ -1,24 +1,24 @@
 /* 
-  Turns a 1D array into a 2D array by grouping
-  all messages from the same sender if they are
-  in sequence. So:
+  Chuyển đổi mảng (array) 1 chiều sang mảng 2 chiều bằng cách gộp nhóm 
+  tất cả các tin nhắn của cùng 1 user gửi nếu nó đang trong cùng 1 chuỗi
+   Minh họa:
   [
-    { sender: 'USER-A', text: 'blah blah'},
+    { sender: 'USER-A', text: 'Hi'},
     { sender: 'USER-A', text: 'hello world'},
     { sender: 'USER-B', text: 'Test 123'},
-    { sender: 'USER-A', text: 'Peace out'},
+    { sender: 'USER-A', text: 'Bye'},
   ]
-  Becomes:
+  Chuyển thành
   [
     [
-      { sender: 'USER-A', text: 'blah blah'},
+      { sender: 'USER-A', text: 'Hi'},
       { sender: 'USER-A', text: 'hello world'},
     ],
     [
       { sender: 'USER-B', text: 'Test 123'},
     ],
     [
-      { sender: 'USER-A', text: 'Peace out'},
+      { sender: 'USER-A', text: 'Bye'},
     ]
   ]
 */
@@ -29,8 +29,9 @@ export const groupMessages = messages => {
   let currentArr = [];
   let currentAuthor = '';
   messages.forEach(m => {
-    // If we are on a new author
-    // This also works on the initial iteration because the value is initially empty string
+    /* Nếu chúng ta là một user mới
+     Điều này cũng hoạt động trên lần lặp đầu tiên vì giá trị ban đầu là chuỗi trống
+  */
     if (m.sender.username !== currentAuthor) {
       if (currentAuthor) {
         finalArr.push([...currentArr]);
@@ -43,9 +44,9 @@ export const groupMessages = messages => {
     }
   });
 
-  // We have to call this at the very end as well because
-  // once the loop finishes, the first if(){} block will
-  // not run and thus the finalArr.push line will not run
+  //  Phải gọi lại sắp xếp array group bởi vì
+  // khi loop kết thúc, block if(){} đầu tiên sẽ ko dc group
+  // dẫn dến lệnh finalArr.push cũng ko thực hiện dc
   finalArr.push([...currentArr]);
 
   return finalArr;

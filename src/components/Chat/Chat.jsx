@@ -15,11 +15,11 @@ export const Chat = () => {
   } = useChat();
 
   useEffect(() => {
-    console.log('My Chats: ', myChats);
+    console.log('Danh sách phòng chat: ', myChats);
   }, [myChats]);
 
   useEffect(() => {
-    console.log('Selected Chat: ', selectedChat);
+    console.log('Thông tin phòng chat được click vào: ', selectedChat);
   }, [selectedChat]);
   //closechat
 
@@ -61,7 +61,7 @@ export const Chat = () => {
               });
             }
             const chatThatMessageBelongsTo = myChats.find(c => c.id === chatId);
-            console.log("chatThatMessageBelongsTo:",chatThatMessageBelongsTo);
+            console.log("Tin nhắn thuộc về:",chatThatMessageBelongsTo);
             const filteredChats = myChats.filter(c => c.id !== chatId);
             console.log("filteredChats:",filteredChats);
             const updatedChat = {

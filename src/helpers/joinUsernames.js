@@ -1,7 +1,9 @@
-// Takes an array of people and then joins their
-// usernames with commas. Also filters out current
-// user's username. If there is only one username
-// it just returns it.
+/*
+  Lấy mảng tập hợp các thành viên và hợp tên các thành viên lại
+  các tên ngăn cách bởi đấu phẩy ','.
+  Đồng thời lọc username của user đang login.
+  Nếu chỉ có tên 1 thành viên khác thì chỉ trả về tên thành viên đó ko dấu phẩy
+*/
 
 export const joinUsernames = (people, currentUsername) => {
   return   people

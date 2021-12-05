@@ -8,9 +8,9 @@ export const ChatProvider = ({ children, authUser }) => {
   const [myChats, setMyChats] = useState();
   const [chatConfig, setChatConfig] = useState();
   const [selectedChat, setSelectedChat] = useState();
-
+  //Tạo phòng chat với tên là tên của userName đang login
   const createChatClick = () => {
-    newChat(chatConfig, { title: '' });
+    newChat(chatConfig, { title: chatConfig.userName });
   };
   const deleteChatClick = chat => {
     const isAdmin = chat.admin.username === chatConfig.userName;
@@ -35,8 +35,8 @@ export const ChatProvider = ({ children, authUser }) => {
     });
   };
 
-  // Set the chat config once the
-  // authUser has initialized.
+  // Set thông tin cấu hình app chat khi
+  // authUser được kích hoạt.
   useEffect(() => {
     if (authUser) {
       fb.firestore

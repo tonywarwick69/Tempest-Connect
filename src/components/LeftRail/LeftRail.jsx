@@ -7,8 +7,11 @@ import { Loader } from 'semantic-ui-react';
 export const LeftRail = () => {
   const { myChats, createChatClick } = useChat();
   const chatsResolved = useResolved(myChats);
-  
-
+  /* LeftRail bên trái sẽ chứa Tên app,
+    chứa Avatar và tên user đang login
+    chứa danh sách các phòng chat
+    chứa button Tạo Chat để tạo phòng chat mới
+  */
   return (
     <div className="left-rail">
       <div className="left-rail-title">

@@ -1,19 +1,19 @@
 import { fb } from 'service';
 import { useEffect, useState } from 'react';
 
-// Initialized as undefined and set to null if not logged in
-// This gives us a way to determine whether or not the hook
-// has yet to resolve. 
+//  Khởi tạo mặc định là undefined và set null useAuth null nếu ko login
+//   việc này giúp xác dịnh xem hook được xử lý hay chưa
+// 
 
-// This is important because we want to be able to distinguish
-// between not having yet determined auth state vs determining
-// that there is no user currently logged in.
+/*Điều này rất quan trọng để có thể phân biệt
+    giữa việc chưa xác định trạng thái xác thực và xác định
+   rằng không có người dùng hiện đang đăng nhập.
+*/
 
-// So that gives us 3 states
+// Từ đó cho 3 trạng thái authUser
 // 1. Unresolved
 // 2. No user
 // 3. User exists
-
 export const useAuth = () => {
   const [authUser, setAuthUser] = useState(); // undefined | firebase.User | null
 

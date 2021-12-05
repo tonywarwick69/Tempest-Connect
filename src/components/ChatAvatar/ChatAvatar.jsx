@@ -6,7 +6,9 @@ import React, { useEffect, useState } from 'react';
 export const ChatAvatar = ({ chat, username, className }) => {
   const { chatConfig } = useChat();
   const [avatar, setAvatar] = useState('');
-
+  /*Mặc định khi tạo user đặt ảnh đại diện user đó là chữ cái đầu tiên trong username của user
+    Nếu user có upload file hình ảnh lên thì thay Avatar là file hình ảnh đó
+   */
   useEffect(() => {
     fb.firestore
       .collection('chatUsers')

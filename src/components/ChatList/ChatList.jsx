@@ -3,7 +3,11 @@ import { useChat } from 'context';
 import { ChatAvatar } from 'components';
 import { Icon } from 'semantic-ui-react';
 import { joinUsernames, notMe } from 'helpers';
-
+/*
+  Tạo danh sách phòng chat gồm các thành phần
+  danh sách phòng chat myChats
+  cấu hình của phần mềm khi user X đang login chatConfig
+ */
 export const ChatList = () => {
   const {
     myChats,
